@@ -1,0 +1,140 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+    width: 100%;
+}
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+h1{
+    font-size: 100%;
+}
+h2{
+    font-size:75%;
+    padding-left: 3%;
+    margin: 3px 0;
+}
+main{
+    width:100%;
+    display: block;
+    border-bottom:1px solid #ccc;
+    position:relative;
+}
+footer{
+    background-color: #fff;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+#form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 98%;
+    margin:5px auto;
+}
+dt{
+    width: 15%;
+}
+dd{
+    width: 85%;
+    margin:0 0 0 0;
+}
+#key{
+    width: 95%;
+    font-size:80%;
+    background-color: #e1efff;
+    box-shadow: 1px 1px 1px 0px #555;
+}
+#memo{
+    width: 95%;
+    height: 30px;
+    font-size:80%;
+    box-shadow: 1px 1px 1px 1px #555;
+    background-color:rgb(241, 239, 239);
+  }
+ul{
+    display:flex;
+    flex-wrap: wrap;
+    table-layout: fixed;
+    width:96%;
+    font-size: 80%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    text-align: center;
+}
+li{
+    list-style-type:none;
+    border: 1px solid #666;
+    margin: 0 auto;
+    cursor: pointer;
+    width: 25%;
+}
+#save{
+    background-color: #fff;
+    color:#0d7dfd;
+}
+#save:hover{
+    background: #0d7dfd;
+    color:#fff;
+}
+#remove{
+    background-color: #fff;
+    color:#ff0000;
+}
+#remove:hover{
+    background: #ff0000;
+    color:#fff;
+}
+
+
+table{
+    margin: 0 auto;
+    border:1px solid #8dc3f5;
+    width: 98%;   
+}
+th{
+    font-size:24px;
+    text-align: center;
+    background-color:#d0e7fc;
+    border-bottom: 1px solid #8dc3f5;
+}
+.title_1{
+    width: 30%;
+}
+.title_2{
+    width: 70%;
+}
+td{
+    font-size:16px;
+    background-color:rgb(241, 239, 239);
+    border-bottom: 1px solid #8dc3f5;
+}
+.list_title:hover{
+    background: #0d7dfd;
+    color:#fff;
+    cursor: pointer;
+}
+#clear{
+    margin: 10px auto;
+    border: 1px solid #666;
+    text-align: center;
+    background-color: #fff;
+    color:#ff0000;
+    cursor: pointer;
+    width: 25%;
+    font-size: 80%;
+}
+#clear:hover{
+    background: #ff0000;
+    color:#fff;
+}
