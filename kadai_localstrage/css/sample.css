@@ -2,7 +2,7 @@ body{
     margin:0;
     padding:0;
     text-align:left;
-    font-size: 32px;
+    font-size: 24px;
     width: 100%;
 }
 header{
@@ -31,10 +31,13 @@ footer{
     text-align: center;
 }
 p{
-    font-size:200%;
+    font: size 100%;
     text-align: center;
     border-bottom:1px solid #fff;
     height:200px;
+}
+select{
+    font-size: 100%;
 }
 #form{
     display: flex;
@@ -49,6 +52,15 @@ dd{
     width: 85%;
     margin:0 0 0 0;
 }
+#sele_d{
+
+}
+#sele_f{
+
+}
+#sele_c{
+
+}
 #key{
     width: 95%;
     font-size:80%;
@@ -57,7 +69,6 @@ dd{
 }
 #memo{
     width: 95%;
-    height: 30px;
     font-size:80%;
     box-shadow: 1px 1px 1px 1px #555;
     background-color:rgb(241, 239, 239);
@@ -87,6 +98,14 @@ li{
     background: #0d7dfd;
     color:#fff;
 }
+#cancel{
+    background-color: #fff;
+    color:#808080;
+}
+#cancel:hover{
+        background: #808080;
+        color:#fff;
+}
 #remove{
     background-color: #fff;
     color:#ff0000;
@@ -108,11 +127,23 @@ th{
     background-color:#d0e7fc;
     border-bottom: 1px solid #8dc3f5;
 }
-.title_1{
+.title{
+    width: 20%;
+}
+.tl_d{
+    width: 10%;
+}
+.tl_f{
+    width: 10%;
+}
+.tl_c{
+    width: 10%;
+}
+.content{
     width: 30%;
 }
-.title_2{
-    width: 70%;
+.date{
+    width: 20%;
 }
 td{
     font-size:16px;
@@ -138,3 +169,8 @@ td{
     background: #ff0000;
     color:#fff;
 }
+
+/* 星評価実装 */
+/* .br-theme-fontawesome-stars .br-widget a {
+    font-size: 5rem;
+  } */
