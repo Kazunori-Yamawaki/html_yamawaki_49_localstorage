@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>私的酒場放浪記</title>
+<title>私的酒場探訪記</title>
 <script src="js/jquery-2.1.3.min.js"></script>
 <script src="js/jquery.barrating.min.js"></script>
 <link rel="stylesheet" href="css/sample.css">
@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-<h1>私的酒場放浪記</h1>
+<h1>私的酒場探訪記</h1>
 </header>
 <main>
     <dl id="form">
@@ -85,31 +85,67 @@
 
 // Save クリックイベント
 $("#save").on('click',function(){
-    const key = $('#key').val();
-    const ev_d = $("#sele_d").val();
-    const ev_f = $("#sele_f").val();
-    const ev_c = $("#sele_c").val();
-    const memo = $('#memo').val();
-    const now = new Date();
-    const y = now.getFullYear();
-    const m = now.getMonth()+1;
-    const d = now.getDate();
-    const w = now.getDay();
-    const wd = ['日','月','火','水','木','金','土'];
-    const h = now.getHours();
-    const mi = now.getMinutes();
-    const s = now.getSeconds();
-    const now_date = y+'/'+m+'/'+d+'('+wd[w]+')'+h+':'+mi+':'+s;
-    const ori_data ={
-        ev_d:ev_d,
-        ev_f:ev_f,
-        ev_c:ev_c,
-        content:memo,
-        date:now_date
-    };
-    const jsondata = JSON.stringify(ori_data);
-    localStorage.setItem(key,jsondata);
-    location.reload();
+    const lookfor_key = $('#key').val();
+    if(lookfor_key == ''){
+        alert('店名を入力してください');
+    }else{
+        if(!(localStorage.getItem(lookfor_key) == null)){
+            const result = confirm('この店名はすでに登録されています。情報を更新しますか？')
+            if(result){
+                const key = $('#key').val();
+                const ev_d = $("#sele_d").val();
+                const ev_f = $("#sele_f").val();
+                const ev_c = $("#sele_c").val();
+                const memo = $('#memo').val();
+                const now = new Date();
+                const y = now.getFullYear();
+                const m = now.getMonth()+1;
+                const d = now.getDate();
+                const w = now.getDay();
+                const wd = ['日','月','火','水','木','金','土'];
+                const h = now.getHours();
+                const mi = now.getMinutes();
+                const s = now.getSeconds();
+                const now_date = y+'/'+m+'/'+d+'('+wd[w]+')'+h+':'+mi+':'+s;
+                const ori_data ={
+                    ev_d:ev_d,
+                    ev_f:ev_f,
+                    ev_c:ev_c,
+                    content:memo,
+                    date:now_date
+                };
+                const jsondata = JSON.stringify(ori_data);
+                localStorage.setItem(key,jsondata);
+                location.reload();
+            };
+        }else{        
+            const key = $('#key').val();
+            const ev_d = $("#sele_d").val();
+            const ev_f = $("#sele_f").val();
+            const ev_c = $("#sele_c").val();
+            const memo = $('#memo').val();
+            const now = new Date();
+            const y = now.getFullYear();
+            const m = now.getMonth()+1;
+            const d = now.getDate();
+            const w = now.getDay();
+            const wd = ['日','月','火','水','木','金','土'];
+            const h = now.getHours();
+            const mi = now.getMinutes();
+            const s = now.getSeconds();
+            const now_date = y+'/'+m+'/'+d+'('+wd[w]+')'+h+':'+mi+':'+s;
+            const ori_data ={
+                ev_d:ev_d,
+                ev_f:ev_f,
+                ev_c:ev_c,
+                content:memo,
+                date:now_date
+            };
+            const jsondata = JSON.stringify(ori_data);
+            localStorage.setItem(key,jsondata);
+            location.reload();
+        };
+    }
 })
 
 // Cancelクリックイベント
@@ -123,34 +159,43 @@ $("#cancel").on('click',function(){
 
 // remove クリックイベント
 $("#remove").on('click',function(){
-    const result = confirm("選択した項目を消去してもよろしいですか？");
-    if(result){
-        const key = $('#key').val();
-        localStorage.removeItem(key);
-        location.reload();
+    const lookfor_key = $('#key').val();
+    if(localStorage.getItem(lookfor_key) == null){
+        alert('削除する情報がありません');
+    }else{
+        const result = confirm("選択した店の記録を消去してもよろしいですか？");
+        if(result){
+            const key = $('#key').val();
+            localStorage.removeItem(key);
+            location.reload();
+        }
     }
-
 })
 
 // clear クリックイベント
 $("#clear").on('click',function(){
-    const result = confirm("本当に全件消去してもよろしいですか？");
-    if(result){
-        const result = confirm("あなたが渡り歩いてきた数々の酒場の想い出を本当に消しちゃっていいんですか？");
+    const keycount = localStorage.length;
+    if(keycount == 0){
+        alert('削除する記録がありません');
+    }else{
+        const result = confirm("本当に全件消去してもよろしいですか？");
         if(result){
-            const result = confirm("いまならまだ引き返せますよ？");
+            const result = confirm("あなたが渡り歩いてきた数々の酒場の想い出を本当に消してしまうんですか？");
             if(result){
-                const result = confirm("お酒と縁を切る覚悟があるんですか？");
+                const result = confirm("いまならまだ引き返せますよ？");
                 if(result){
-                    alert("あなたに健康な人生が訪れますように・・・")
-                    localStorage.clear();
-                    location.reload();
+                    const result = confirm("お酒と縁を切る覚悟があるんですか？");
+                    if(result){
+                        alert("さよなら！べ、べつに寂しくなんてないんだからっ！")
+                        localStorage.clear();
+                        location.reload();
+                    }
+                    
                 }
-                
             }
         }
-
     }
+    
 
 })
 
