@@ -4,28 +4,36 @@ body{
     text-align:left;
     font-size: 24px;
     width: 100%;
+    background-color: #FFDBC9;
 }
 header{
-    background-color: #fff;
+    background-color: #FFDBC9;
     border-bottom: 1px solid #ccc;
     text-align: center;
 }
 h1{
     font-size: 100%;
+    background-color: #EAD9FF;
 }
 h2{
     font-size:75%;
     padding-left: 3%;
     margin: 3px 0;
 }
+.form_d{
+    color:#EAD9FF;
+    padding-top:10px;
+}
 main{
     width:100%;
     display: block;
     border-bottom:1px solid #ccc;
     position:relative;
+    background-image: url(sakaba.jpeg);
+    background-size: cover;
 }
 footer{
-    background-color: #fff;
+    background-color: #EAD9FF;
     border-top:1px solid #ccc;
     border-bottom:1px solid #ccc;
     text-align: center;
@@ -44,6 +52,7 @@ select{
     flex-wrap: wrap;
     width: 98%;
     margin:5px auto;
+    color:#EAD9FF;
 }
 dt{
     width: 15%;
@@ -52,7 +61,7 @@ dd{
     width: 85%;
     margin:0 0 0 0;
 }
-#sele_d{
+/* #sele_d{
 
 }
 #sele_f{
@@ -60,7 +69,7 @@ dd{
 }
 #sele_c{
 
-}
+} */
 #key{
     width: 95%;
     font-size:80%;
@@ -118,14 +127,14 @@ li{
 
 table{
     margin: 0 auto;
-    border:1px solid #8dc3f5;
+    border:1px solid #FFD5EC;
     width: 98%;   
 }
 th{
     font-size:24px;
     text-align: center;
-    background-color:#d0e7fc;
-    border-bottom: 1px solid #8dc3f5;
+    background-color:#FFBEDA;
+    border-bottom: 1px solid #FFD5EC;
 }
 .title{
     width: 20%;
@@ -148,7 +157,7 @@ th{
 td{
     font-size:16px;
     background-color:rgb(241, 239, 239);
-    border-bottom: 1px solid #8dc3f5;
+    border-bottom: 1px solid #FFD5EC;
 }
 .list_title:hover{
     background: #0d7dfd;
